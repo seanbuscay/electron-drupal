@@ -1,0 +1,5 @@
+node_modules
+web
+bin
+npm-debug.log
+.atom-build.yml
