@@ -2,4 +2,6 @@ node_modules
 web
 bin
 npm-debug.log
+logs
 .atom-build.yml
+web_backup*
