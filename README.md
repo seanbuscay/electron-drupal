@@ -84,15 +84,16 @@ Fix:
 
 ### Technical notes
 
-#### Install locations
+#### Install notes
 
 - Drupal 8 installs
   - within the `web` directory
   - a sqlite db here: `web/sites/default/files/.ht.sqlite`
   - the "JS symbol name collisions" fix to the "Classy" core theme
-- PHP for OS X
+- PHP
   - installs within the `bin` directory
   - uses a `php.ini` file here: `bin/php.ini`
+  - logs errors to `logs/electron-php-errors.log`
 - Drush 8
   - installs within the `bin` directory
   - Drush uses a `drush.ini` file here: `bin/drush.ini`
@@ -140,7 +141,16 @@ Examples:
 
 ##### NPM Scripts
 
-todo
+Cleanup the previous install before running `npm install` again:
+
+- `npm run wipe`
+  - will backup the current Drupal web directory
+  - will remove everything installed by `npm install`
+  - except any backups of the Drupal web directory
+
+- `npm run wipe-all`
+  - will remove everything installed by `npm install`
+  - including any backups of the Drupal web directory
 
 ## Contributing to the Electron Drupal project
 

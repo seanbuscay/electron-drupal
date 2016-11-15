@@ -5,6 +5,7 @@ const app = electron.app
 const BrowserWindow = electron.BrowserWindow
 
 require('electron-debug')({showDevTools: false})
+
 // php
 var path = require('path')
 var php = require('gulp-connect-php')
@@ -46,11 +47,12 @@ app.on('ready', function () {
   mainWindow = new BrowserWindow({
     width: 1024,
     height: 768,
-    nodeIntegration: false,
+    nodeIntegration: true,
     title: 'Electron Drupal',
-    webPreferences: {
-      webSecurity: false
-    }
+    icon: path.resolve(__dirname) + '/app/images/app-icon.png'
+    // webPreferences: {
+    //   webSecurity: false
+    // }
   })
   // and load the app's front controller. Feel free to change with app_dev.php
   mainWindow.loadURL('http://127.0.0.1:8088/index.php')

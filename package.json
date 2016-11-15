@@ -9,11 +9,8 @@
     "install-drush": "bash scripts/install-drush.sh",
     "install-drupal": "bash scripts/install-drupal.sh",
     "postinstall": "npm run install-php; npm run install-drush; npm run install-drupal",
-    "wipe-bin-install": "rm -R bin",
-    "wipe-npm-install": "rm -R node_modules",
-    "wipe-drupal-install": "sudo rm -R -f web",
-    "wipe": "npm run wipe-bin-install;npm run wipe-drupal-install; npm run wipe-npm-install",
-    "rebuild-versions": "electron-rebuild"
+    "wipe": "bash scripts/wipe.sh",
+    "wipe-all": "npm run wipe; sudo rm -R -f web_*"
   },
   "repository": {
     "type": "git",
@@ -37,7 +34,6 @@
     "electron-debug": "^1.1.0",
     "devtron": "^1.4.0",
     "debug-menu": "^0.4.0",
-    "electron-log": "^1.2.2",
-    "electron-rebuild": "^1.3.0"
+    "electron-log": "^1.2.2"
   }
 }
